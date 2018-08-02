@@ -12,8 +12,9 @@ public class HomePage
 	
 	public static class Favourites
 	{
-		public static By incidentsLink	= By.xpath("//div[@id='gsft_nav']/div/magellan-favorites-list/div[2]/div/div/a[child::div/span[text()='Incidents']]");
-		public static By incidentsHeader = By.xpath("//h1[text()='Incidents']");
+		public static By incidentsLink		= By.xpath("//div[@id='gsft_nav']/div/magellan-favorites-list/div[2]/div/div/a[child::div/span[text()='Incidents']]");
+		public static By incidentsHeader	= By.xpath("//h1[text()='Incidents']");
+		public static By glsapQueue			= By.xpath("//a[child::div/span[text()='GL_SAP']]");
 	}
 	
 	public static class AllApps

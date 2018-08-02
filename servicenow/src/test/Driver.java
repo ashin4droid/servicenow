@@ -15,10 +15,9 @@ public class Driver
 	
 	public static void main(String[] args)
 	{
-		autoAssignAndClose();
+		//autoAssignAndClose();
 		
-		//autoAssignGeneral();
-		
+		autoAssignGeneral();
 	}
 	
 	private static void autoAssignAndClose()
@@ -59,7 +58,7 @@ public class Driver
 		finally
 		{
 			try {
-				ExcelUtil.updateGenRoutingRunInExcel(start, RouteTicketsGeneral.getRoutedTicketList());
+				ExcelUtil.updateGenRoutingRunInExcel(start, RouteTicketsGeneral.getRoutedTicketsMap());
 				teardown();
 			}
 			catch (InterruptedException e) { e.printStackTrace(); }

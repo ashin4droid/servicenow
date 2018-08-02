@@ -19,7 +19,7 @@ import com.wipro.automation.snow.pages.GLSAPPage;
 import com.wipro.automation.snow.pages.HomePage;
 import com.wipro.automation.snow.pages.LoginPage;
 import com.wipro.automation.snow.utils.ClosureData;
-import com.wipro.automation.snow.utils.Crypto;
+import com.wipro.automation.snow.lib.Crypto;
 import com.wipro.automation.snow.utils.ExcelUtil;
 
 public class ResolveTickets

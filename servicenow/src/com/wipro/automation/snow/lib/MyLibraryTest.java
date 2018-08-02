@@ -1,52 +1,30 @@
 package com.wipro.automation.snow.lib;
 
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.net.InetAddress;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 import javax.swing.JOptionPane;
-
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.Proxy;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.CapabilityType;
 //import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
-import jxl.Sheet;
-import jxl.Workbook;
-import jxl.write.Label;
-import jxl.write.WritableCell;
-import jxl.write.WritableSheet;
-import jxl.write.WritableWorkbook;
 
 public class MyLibraryTest
 {
@@ -67,7 +45,7 @@ public class MyLibraryTest
 		public static final String FIREFOX = "firefox";
 	}
 	
-	public WebDriver openBrowser(String browser) throws Exception
+	public WebDriver openBrowser(String browser)
 	{
 		String browserName = browser.toLowerCase();
 		switch (browserName)
@@ -83,7 +61,7 @@ public class MyLibraryTest
 			case BrowserType.CHROME :
 				
 				System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
-				Runtime.getRuntime().exec("resources/chromeextention.exe");
+				//Runtime.getRuntime().exec("resources/chromeextention.exe");
 				driver = new ChromeDriver(getCapabilities(BrowserType.CHROME));
 				
 				break;
@@ -267,7 +245,7 @@ public class MyLibraryTest
 	}
 	
 	
-	public Boolean waitForPresenceOfElement(By byLocator, int timeout) throws Exception
+	public Boolean waitForPresenceOfElement(By byLocator, int timeout)
 	{
 		int i;
 		for (i = 0; i < timeout; i++)
@@ -488,7 +466,7 @@ public class MyLibraryTest
 			try
 			{
 				String text = driver.findElement(byLocator).getText();
-				return text;
+				return text.trim();
 			}
 			catch (Exception e) {
 				e.printStackTrace();
